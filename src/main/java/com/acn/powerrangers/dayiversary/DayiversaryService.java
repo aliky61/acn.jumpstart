@@ -11,11 +11,17 @@ import static java.time.temporal.ChronoUnit.DAYS;
 @Service
 public class DayiversaryService {
 
-	public Dayiversary calculate(LocalDate birthDate){
+	public Dayiversary calculate(LocalDate birthDate) {
+		
+		long daysOnEarth = DAYS.between(birthDate, LocalDate.now());
+		long daysToNextDayiversary = 1000 - (daysOnEarth % 1000); 		
+		LocalDate nextDayiversary = LocalDate.now().plusDays(daysToNextDayiversary);
+		
 		Dayiversary dayiversary = new Dayiversary();
-		dayiversary.setDaysLivingOnEarth(DAYS.between(birthDate, LocalDate.now()));
-		dayiversary.setNextDayiversary(LocalDate.now().plusDays(dayiversary.getDaysLivingOnEarth() % 1000L));
-		//dayiversary.setDaysLeftToNextDayiversary();
+		dayiversary.setDaysLivingOnEarth(daysOnEarth);
+		dayiversary.setNextDayiversary(nextDayiversary);		
+		dayiversary.setDaysLeftToNextDayiversary(daysToNextDayiversary);
+		
 		return dayiversary;
 	}
 
