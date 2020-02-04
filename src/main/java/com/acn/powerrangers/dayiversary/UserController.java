@@ -33,7 +33,7 @@ public class UserController {
 
 	@GetMapping("/users")
 	//@RequestMapping(method = RequestMethod.GET, path = "/users") Unnötig!
-	public List<User> readUsers() {
+	public Iterable<User> readUsers() {
 		return userService.getUserList();
 	}
 	//@ResponseBody //das ist equivalent zu @RestController über der class
@@ -43,10 +43,10 @@ public class UserController {
 	}
 	
 	@PostMapping("/users")
-	public List<User> createUser(@RequestBody User user){
-		user.setId(userService.getUserList().size()+1L);
-		userService.getUserList().add(user);
-		return userService.getUserList();
+	public User createUser(@RequestBody User user){
+		//user.setId(userService.getUserList().size()+1L);
+		userService.add(user);
+		return user;
 	}
 	
 	@DeleteMapping("/users/{id}")
