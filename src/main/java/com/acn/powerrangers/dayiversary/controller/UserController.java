@@ -1,7 +1,4 @@
-package com.acn.powerrangers.dayiversary;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.acn.powerrangers.dayiversary.controller;
 
 import javax.websocket.server.PathParam;
 
@@ -9,15 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.acn.powerrangers.dayiversary.models.User;
+import com.acn.powerrangers.dayiversary.dtos.UserDTO;
+import com.acn.powerrangers.dayiversary.services.DayiversaryService;
+import com.acn.powerrangers.dayiversary.services.UserService;
 
 @RestController
 public class UserController {
@@ -33,7 +29,7 @@ public class UserController {
 
 	@GetMapping("/users")
 	//@RequestMapping(method = RequestMethod.GET, path = "/users") Unnötig!
-	public Iterable<User> readUsers() {
+	public Iterable<UserDTO> readUsers() {
 		return userService.getUserList();
 	}
 	//@ResponseBody //das ist equivalent zu @RestController über der class
@@ -43,7 +39,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/users")
-	public User createUser(@RequestBody User user){
+	public UserDTO createUser(@RequestBody UserDTO user){
 		//user.setId(userService.getUserList().size()+1L);
 		userService.add(user);
 		return user;
@@ -55,16 +51,13 @@ public class UserController {
 		return ResponseEntity.noContent().build();
 	}
 	
-	
-	
-	
-	/*
+	//"/users?id=4&
 	@GetMapping("/users/{id}")
 	//@RequestMapping(method = RequestMethod.GET, path = "/users") Lange art und weise
-	public List<User> readUsersById(User user) {
-		return null;
+	public UserDTO readUserById(@PathVariable("id") Long userId) {
+		return userService.readUserById(userId);
 	}
-	*/
+	
 	
 	
 	

@@ -1,15 +1,18 @@
-package com.acn.powerrangers.dayiversary;
+package com.acn.powerrangers.dayiversary.controller;
 
 import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.acn.powerrangers.dayiversary.Zodiac;
 import com.acn.powerrangers.dayiversary.dtos.Dayiversary;
-import com.acn.powerrangers.dayiversary.models.User;
+import com.acn.powerrangers.dayiversary.dtos.UserDTO;
+import com.acn.powerrangers.dayiversary.services.DayiversaryService;
+import com.acn.powerrangers.dayiversary.services.UserService;
+import com.acn.powerrangers.dayiversary.services.ZodiacService;
 
 @RestController
 public class ZodiacController {
@@ -22,7 +25,7 @@ public class ZodiacController {
 	
 	@GetMapping("/users/{id}/astrological")
 	public Zodiac astrological(@PathVariable("id") Long id) {
-		User userById = userService.readUserById(id);
+		UserDTO userById = userService.readUserById(id);
 		Dayiversary userDayiversary = dayiversaryService.calculate(userById.getBirthDate());
 		LocalDate specificDayiversary = userDayiversary.getNextDayiversary();
 		return zodiacService.zodiacByDate(specificDayiversary);

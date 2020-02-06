@@ -1,8 +1,10 @@
-package com.acn.powerrangers.dayiversary;
+package com.acn.powerrangers.dayiversary.services;
 
 import java.time.LocalDate;
 
 import org.springframework.stereotype.Service;
+
+import com.acn.powerrangers.dayiversary.Zodiac;
 
 @Service
 public class ZodiacService {

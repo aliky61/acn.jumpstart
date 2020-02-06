@@ -10,6 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.acn.powerrangers.dayiversary.dtos.Dayiversary;
+import com.acn.powerrangers.dayiversary.services.DayiversaryService;
 
 public class DayiversaryServiceTest {
 

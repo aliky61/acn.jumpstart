@@ -28,7 +28,7 @@ public enum Zodiac {
 		//duration = Period.between(this.beginDate, this.endDate.plusDays(1));
 	}
 	
-	boolean checkZodiac(LocalDate birthday) {
+	public boolean checkZodiac(LocalDate birthday) {
 		LocalDate patchedBirthday;
 		if (birthday.getMonthValue() == 12 && birthday.getDayOfMonth() >= 22) {
 			patchedBirthday = birthday.withYear(1969);

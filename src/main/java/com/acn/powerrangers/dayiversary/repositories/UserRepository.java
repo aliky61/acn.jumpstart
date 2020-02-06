@@ -6,6 +6,4 @@ import com.acn.powerrangers.dayiversary.models.User;
 
 public interface UserRepository extends CrudRepository<User, Long> {
 
-	
-
 }
