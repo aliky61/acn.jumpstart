@@ -6,6 +6,7 @@ import java.time.LocalDate;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.acn.powerrangers.dayiversary.dtos.DayiversaryDTO;
@@ -21,6 +22,7 @@ public class DayiversaryDTOServiceTest {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	//@Ignore
 	@Test
 	public void calculateDayiversaryTest() {
 		DayiversaryService dayiversaryService = new DayiversaryService();
