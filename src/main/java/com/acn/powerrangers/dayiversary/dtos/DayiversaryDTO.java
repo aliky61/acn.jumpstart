@@ -1,44 +1,19 @@
 package com.acn.powerrangers.dayiversary.dtos;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDate;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class DayiversaryDTO {
 
-	private LocalDate nextDayiversary;
-	private Long daysLeftToNextDayiversary;
-	private Long daysLivingOnEarth;
-	
-	public DayiversaryDTO() {
-	}
-	
-	public DayiversaryDTO(LocalDate nextDayiversary, Long daysLeftToNextDayiversary, Long daysLivingOnEarth) {
-		this.nextDayiversary = nextDayiversary;
-		this.daysLeftToNextDayiversary = daysLeftToNextDayiversary;
-		this.daysLivingOnEarth = daysLivingOnEarth;
-	}
+    private LocalDate nextDayiversary;
+    private Long daysLeftToNextDayiversary;
+    private Long daysLivingOnEarth;
+    private Long daysLeftToNextTenThousandDayiversary;
 
-	public LocalDate getNextDayiversary() {
-		return nextDayiversary;
-	}
-
-	public void setNextDayiversary(LocalDate nextDayiversary) {
-		this.nextDayiversary = nextDayiversary;
-	}
-
-	public Long getDaysLeftToNextDayiversary() {
-		return daysLeftToNextDayiversary;
-	}
-
-	public void setDaysLeftToNextDayiversary(Long daysLeftToNextDayiversary) {
-		this.daysLeftToNextDayiversary = daysLeftToNextDayiversary;
-	}
-
-	public Long getDaysLivingOnEarth() {
-		return daysLivingOnEarth;
-	}
-
-	public void setDaysLivingOnEarth(Long daysLivingOnEarth) {
-		this.daysLivingOnEarth = daysLivingOnEarth;
-	}
-	
 }

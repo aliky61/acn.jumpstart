@@ -16,12 +16,14 @@ public class DayiversaryService {
 		long daysOnEarth = DAYS.between(birthDate, LocalDate.now());
 		long daysToNextDayiversary = 1000 - (daysOnEarth % 1000); 		
 		LocalDate nextDayiversary = LocalDate.now().plusDays(daysToNextDayiversary);
+		long daysTonextTenThousandDayiversary = 10000 - (daysOnEarth % 10000);
 		
 		DayiversaryDTO dayiversary = new DayiversaryDTO();
 		dayiversary.setDaysLivingOnEarth(daysOnEarth);
 		dayiversary.setNextDayiversary(nextDayiversary);		
 		dayiversary.setDaysLeftToNextDayiversary(daysToNextDayiversary);
-		
+		dayiversary.setDaysLeftToNextTenThousandDayiversary(daysTonextTenThousandDayiversary);
+
 		return dayiversary;
 	}
 
