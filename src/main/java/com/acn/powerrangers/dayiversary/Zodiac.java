@@ -5,18 +5,18 @@ import java.time.Period;
 
 public enum Zodiac {
 	
-	CAPICORN("1969-12-22","1970-01-20"),
-	AQUARIUS("1970-01-21","1970-02-19"),
-	PISCES("1970-02-20","1970-03-20"),
-	ARIES("1970-03-21","1970-04-20"),
-	TAURUS("1970-04-21","1970-05-20"),
-	GEMINI ("1970-05-21","1970-06-21"),
-	CANCER("1970-06-20","1970-07-22"),
-	LEO("1970-07-23", "1970-08-23"),
-	VIRGO("1970-08-24","1970-09-23"),
-	LIBRA("1970-09-24","1970-10-23"),
-	SCORPIO("1970-10-24","1970-11-22"),
-	SAGITTARIUS("1970-11-23","1970-12-21");
+	CAPICORN("1969-12-22","1970-01-20"),			//Steinbock
+	AQUARIUS("1970-01-21","1970-02-19"),			//Wassermann
+	PISCES("1970-02-20","1970-03-20"),			//Fische
+	ARIES("1970-03-21","1970-04-20"),			//Widder
+	TAURUS("1970-04-21","1970-05-20"),			//Stier
+	GEMINI ("1970-05-21","1970-06-21"),			//Zwillinge
+	CANCER("1970-06-20","1970-07-22"),			//Krebs
+	LEO("1970-07-23", "1970-08-23"),				//Löwe
+	VIRGO("1970-08-24","1970-09-23"),			//Jungfrau
+	LIBRA("1970-09-24","1970-10-23"),			//Waage
+	SCORPIO("1970-10-24","1970-11-22"),			//Skorpion
+	SAGITTARIUS("1970-11-23","1970-12-21");		//Schütze
 	
 	private final LocalDate beginDate;
 	private final LocalDate endDate;

@@ -57,10 +57,7 @@ public class UserController {
 	public UserDTO readUserById(@PathVariable("id") Long userId) {
 		return userService.readUserById(userId);
 	}
-	
-	
-	
-	
+
 	/*
 	@PutMapping("/users/{id}")
 	public User putUser(@RequestBody User user){

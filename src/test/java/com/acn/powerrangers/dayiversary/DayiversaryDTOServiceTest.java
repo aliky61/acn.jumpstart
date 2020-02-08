@@ -1,6 +1,5 @@
 package com.acn.powerrangers.dayiversary;
 
-import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.LocalDate;
@@ -9,10 +8,10 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.acn.powerrangers.dayiversary.dtos.Dayiversary;
+import com.acn.powerrangers.dayiversary.dtos.DayiversaryDTO;
 import com.acn.powerrangers.dayiversary.services.DayiversaryService;
 
-public class DayiversaryServiceTest {
+public class DayiversaryDTOServiceTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -26,7 +25,7 @@ public class DayiversaryServiceTest {
 	public void calculateDayiversaryTest() {
 		DayiversaryService dayiversaryService = new DayiversaryService();
 		LocalDate birthDate = LocalDate.now().minusDays(1000);//LocalDate.of(1950, 4, 2);
-		Dayiversary dayiversary = new Dayiversary();
+		DayiversaryDTO dayiversary = new DayiversaryDTO();
 		//dayiversary.setDaysLivingOnEarth();
 		assertEquals(1000L , (long) dayiversaryService.calculate(birthDate).getDaysLivingOnEarth());
 	}
